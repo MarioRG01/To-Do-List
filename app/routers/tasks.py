@@ -9,18 +9,25 @@ router = APIRouter(prefix="", tags=["tasks"])
 
 @router.post("/tasks", response_model=TaskRead, status_code=status.HTTP_201_CREATED)
 async def create_task(
-    task: TaskCreate,
-    user=Depends(get_current_user)
-):
-    insert_query = tasks.insert().values(
-        user_id=user["id"],
-        title=task.title,
-        description=task.description
-    )
-    task_id = await database.execute(insert_query)
-    select_query = tasks.select().where(tasks.c.id == task_id)
-    row = await database.fetch_one(select_query)
-    return row
+        task: TaskCreate,
+        user=Depends(get_current_user)
+    ):
+        insert_query = tasks.insert().values(
+            user_id=user["id"],
+            title=task.title,
+            description=task.description
+        )
+        insert_query = tasks.insert().values(
+            user_id=user["id"],
+            title=task.title,
+            description=task.description,
+            completed=False               # <-- aquí
+        )
+        task_id = await database.execute(insert_query)
+        select_query = tasks.select().where(tasks.c.id == task_id)
+        row = await database.fetch_one(select_query)
+        return row
+
 
 @router.get("/tasks", response_model=List[TaskRead])
 async def list_tasks(user=Depends(get_current_user)):
