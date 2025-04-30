@@ -93,9 +93,9 @@ ipython_config.py
 .env.*
 
 # SQLite database files
-*.sqlite
-*.sqlite3
-*.db
+#*.sqlite
+#*.sqlite3
+#*.db
 
-# Migrations (if usas Alembic)
-alembic/versions/
+# Migrations (if use Alembic)
+#alembic/versions/
