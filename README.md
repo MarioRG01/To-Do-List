@@ -19,6 +19,7 @@ Una API RESTful de lista de pendientes (To-Do List) construida con:
 
 Crea un archivo .env en la raíz del proyecto con las siguientes variables:
 DATABASE_URL=sqlite:///./todo.db
+
 SECRET_KEY=tu_super_secreto
 
 ## Instalación
