@@ -64,7 +64,7 @@ To-Do-List/
 ├─ README.md
 └─ .gitignore
 
-## Configuración de la base de datos y migraciones
+## Configuración de la base de datos y migraciones (En caso de erro por la base seguir estas instrucciones)
 
 Inicializa Alembic:
 alembic init alembic
