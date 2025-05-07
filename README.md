@@ -34,7 +34,7 @@ python3.11 -m venv .venv
 \.venv\Scripts\Activate.ps1     # Windows
 
 # Instala las dependencias
-tpip install -r requirements.txt
+pip install -r requirements.txt
 
 # Correr server
 uvicorn app.main:app --reload
