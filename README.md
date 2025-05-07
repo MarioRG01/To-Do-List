@@ -30,7 +30,8 @@ SECRET_KEY=tu_super_secreto
 
 # Crea y activa el entorno virtual
 python3.11 -m venv .venv
-.venv\Scripts\activate.bat     # Windows
+
+.\.venv\Scripts\Activate.ps1     # Windows
 
 # Instala las dependencias
 tpip install -r requirements.txt
