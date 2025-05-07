@@ -91,14 +91,16 @@ POST /login → Devuelve JWT.
 ## Uso de Postman
 
 Importa postman_collection.json.
+Para hacerlo vete al archivo de este repositorio, de ahi en raw y agarras la direccion URL, despues vas a postman y le das importar, le das el url y ya tienes las collections.
 
-Crea un entorno TodoAPI con:
-base_url → http://127.0.0.1:8000
+Crea un entorno TodoAPI con dos variables:
+base_url → initial value http://127.0.0.1:8000        current value http://127.0.0.1:8000
 token → (vacío inicialmente)
 
+En cada base_url pon http://127.0.0.1:8000 y en entorno pon el creado llamado TodoApi
 Register (POST {{base_url}}/register)
-
 Login (POST {{base_url}}/login) y captura el token:
+En login checa que este el codigo.
 let json = pm.response.json();
 if (json.access_token) pm.environment.set("token", json.access_token);
 
