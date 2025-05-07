@@ -64,24 +64,6 @@ To-Do-List/
 ├─ README.md
 └─ .gitignore
 
-## Configuración de la base de datos y migraciones (En caso de erro por la base seguir estas instrucciones)
-
-Inicializa Alembic:
-alembic init alembic
-
-En alembic.ini, ajusta:
-sqlalchemy.url = sqlite:///./todo.db
-
-En alembic/env.py, apunta tu metadata:
-from app.config import DATABASE_URL
-from app.db.base import metadata
-config.set_main_option("sqlalchemy.url", DATABASE_URL)
-target_metadata = metadata
-
-Genera y aplica la migración:
-alembic revision --autogenerate -m "Create users and tasks tables"
-alembic upgrade head
-
 ## Autenticación JWT
 
 Implementa:
@@ -122,6 +104,24 @@ from app.background.cleaner import clean_completed
 import asyncio
 asyncio.run(clean_completed())
 EOF
+
+## Configuración de la base de datos y migraciones (En caso de error por la base de datos seguir estas instrucciones) e ir hasta donde se corre el server
+
+Inicializa Alembic:
+alembic init alembic
+
+En alembic.ini, ajusta:
+sqlalchemy.url = sqlite:///./todo.db
+
+En alembic/env.py, apunta tu metadata:
+from app.config import DATABASE_URL
+from app.db.base import metadata
+config.set_main_option("sqlalchemy.url", DATABASE_URL)
+target_metadata = metadata
+
+Genera y aplica la migración:
+alembic revision --autogenerate -m "Create users and tasks tables"
+alembic upgrade head
 
 ##  Problemas comunes y soluciones
 
