@@ -15,17 +15,17 @@ Una API RESTful de lista de pendientes (To-Do List) construida con:
 - VS Code 
 - Git
 
+## Instalación
+# Clona el repositorio y entra en él
+git clone https://github.com/tu-usuario/To-Do-List.git
+cd To-Do-List
+
 ## Variables de entorno
 
 Crea un archivo .env en la raíz del proyecto con las siguientes variables:
 DATABASE_URL=sqlite:///./todo.db
 
 SECRET_KEY=tu_super_secreto
-
-## Instalación
-# Clona el repositorio y entra en él
-git clone https://github.com/tu-usuario/To-Do-List.git
-cd To-Do-List
 
 # Crea y activa el entorno virtual
 python3.11 -m venv .venv
